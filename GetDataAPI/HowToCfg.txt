@@ -1,0 +1,13 @@
+﻿1. 添加“用户环境变量”：
+	GetData		X:\Xxx\GetDataAPI
+	Path里添加		%GetData%\bin;
+
+2. VC的项目属性页：
+	C/C++
+		附加包含目录添加	$(GetData)\include
+	连接器
+		附加库目录添加		$(GetData)\lib
+		//vs2008
+		附加依赖项添加		GetDataApi_$(PlatformName)_vc90_$(ConfigurationName).lib
+		//vs2013
+		附加依赖项添加		GetDataApi_$(PlatformName)_vc120_$(ConfigurationName).lib
